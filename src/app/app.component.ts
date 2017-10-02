@@ -2,9 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Auth, User,UserDetails, IDetailedError,CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ConnectionPage } from '../pages/connection/connection';
+
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +16,18 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public auth: Auth) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Connection', component: ConnectionPage }
     ];
 
   }
@@ -33,6 +38,11 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      if(this.auth.isAuthenticated()) {
+           this.rootPage = HomePage;
+         } else {
+           this.rootPage = ConnectionPage;
+         }
     });
   }
 
