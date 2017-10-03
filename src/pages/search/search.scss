@@ -1,3 +1,34 @@
 page-search {
+  .win.active{
+    background: #FFEB3B;
+    ion-icon{
+      color: white;
 
+    }
+  }
+  .open.active{
+    background: #32db64;
+    ion-icon{
+      color: white;
+
+    }
+  }
+  .lost.active{
+    background: #f53d3d;
+    ion-icon{
+      color: white;
+
+    }
+  }
+  .tri-attributs{
+    padding-top: 10px;
+  }
+    .tri-attributs ion-icon{
+      vertical-align: middle;
+      padding-left: 4px;
+    }
+    .tri-attributs .segment-button.active{
+    background: #263145;
+    color: white;
+  }
 }

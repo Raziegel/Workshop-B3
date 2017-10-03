@@ -17,21 +17,18 @@
   <ion-list>
     <ion-item-sliding *ngFor="let item of currentItems">
       <button ion-item (click)="openItem(item)">
-        <ion-avatar item-start>
+
+          <ion-icon color="secondary" *ngIf=" item.statut == 'win'" name="ios-folder-open" item-start></ion-icon>
+          <ion-icon color="yellow" *ngIf=" item.statut == 'open'" name="ios-folder-open" item-start></ion-icon>
+          <ion-icon color="danger" *ngIf=" item.statut == 'lost'" name="ios-folder-open" item-start></ion-icon>
+        <h2 >{{item.titre}}
+        </h2>
+        <p>{{item.entrepriseCliente}}</p>
+        <ion-avatar item-end>
           <span>
           {{item.dateDemande}}
           </span>
         </ion-avatar>
-        <h2>{{item.name}}
-          <ion-icon color="secondary" *ngIf=" item.statut == 'open'" name="checkmark-circle"></ion-icon>
-          <ion-icon color="yellow" *ngIf=" item.statut == 'win'" name="checkmark"></ion-icon>
-          <ion-icon color="danger" *ngIf=" item.statut == 'lost'" name="close"></ion-icon>
-
-
-
-        </h2>
-        <p>{{item.about}}</p>
-        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
 
 
       </button>
