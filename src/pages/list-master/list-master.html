@@ -18,11 +18,22 @@
     <ion-item-sliding *ngFor="let item of currentItems">
       <button ion-item (click)="openItem(item)">
         <ion-avatar item-start>
-          <img [src]="item.profilePic" />
+          <span>
+          {{item.dateDemande}}
+          </span>
         </ion-avatar>
-        <h2>{{item.name}}</h2>
+        <h2>{{item.name}}
+          <ion-icon color="secondary" *ngIf=" item.statut == 'open'" name="checkmark-circle"></ion-icon>
+          <ion-icon color="yellow" *ngIf=" item.statut == 'win'" name="checkmark"></ion-icon>
+          <ion-icon color="danger" *ngIf=" item.statut == 'lost'" name="close"></ion-icon>
+
+
+
+        </h2>
         <p>{{item.about}}</p>
         <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+
+
       </button>
 
       <ion-item-options>
