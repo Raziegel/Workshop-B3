@@ -1,25 +1,50 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { User } from '../../providers/providers';
+import { MainPage } from '../pages';
 
 @IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
+  templateUrl: 'login.html'
 })
 export class LoginPage {
+  // The account fields for the login form.
+  // If you're using the username field with or without email, make
+  // sure to add it to the type
+  account: { email: string, password: string } = {
+    email: 'test@example.com',
+    password: 'test'
+  };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // Our translated text strings
+  private loginErrorString: string;
+
+  constructor(public navCtrl: NavController,
+    public user: User,
+    public toastCtrl: ToastController,
+    public translateService: TranslateService) {
+
+    this.translateService.get('LOGIN_ERROR').subscribe((value) => {
+      this.loginErrorString = value;
+    })
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  // Attempt to login in through our User service
+  doLogin() {
+    this.user.login(this.account).subscribe((resp) => {
+      this.navCtrl.push(MainPage);
+    }, (err) => {
+      this.navCtrl.push(MainPage);
+      // Unable to log in
+      let toast = this.toastCtrl.create({
+        message: this.loginErrorString,
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+    });
   }
-
 }

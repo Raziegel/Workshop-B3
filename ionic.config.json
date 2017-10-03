@@ -1,8 +1,6 @@
 {
-  "name": "workshopB3",
-  "app_id": "536f0f5f",
+  "name": "SuperTest",
+  "app_id": "",
   "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
+  "integrations": {}
 }
