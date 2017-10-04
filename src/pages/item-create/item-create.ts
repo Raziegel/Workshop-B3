@@ -28,7 +28,12 @@ export class ItemCreatePage {
       frequence : [''],
       start_at_the_latest : [''],
       status : [''],
-      client : ['']
+      client : [''],
+      contact_name : [''],
+      key_success_1 : [''],
+      key_success_2 : [''],
+      key_success_3 : [''],
+
     });
 
     // Watch the form for changes, and
