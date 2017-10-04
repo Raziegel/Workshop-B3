@@ -1,4 +1,14 @@
 page-search {
+  ion-navbar{
+    background: #263145 !important;
+    color: blue !important;
+  }
+  .toolbar-background{
+    background:  #263145 !important;
+  }
+  .toolbar-title{
+    color: #F57100;
+  }
   .win.active{
     background: #FFEB3B;
     ion-icon{

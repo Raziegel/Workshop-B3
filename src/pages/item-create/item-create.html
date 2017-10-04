@@ -10,6 +10,7 @@
         <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
       </button>
     </ion-buttons>
+    
     <ion-buttons end>
       <button ion-button (click)="done()" [disabled]="!isReadyToSave" strong>
         <span color="primary" showWhen="ios">
@@ -37,10 +38,28 @@
     </div>
     <ion-list>
       <ion-item>
+        <ion-label color="gfi_orange" stacked></ion-label>
         <ion-input type="text" placeholder="{{ 'ITEM_NAME_PLACEHOLDER' | translate }}" formControlName="name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-input type="text" placeholder="{{ 'ITEM_ABOUT_PLACEHOLDER' | translate }}" formControlName="about"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="gfi_orange" stacked>Need&rsquo;s title</ion-label>
+        <ion-input type="text" placeholder="{{ 'Need&rsquo;s title '}}" formControlName="titre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea  placeholder="{{ 'Need&rsquo;s description'}}" formControlName="description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'Need&rsquo;s place'}}" formControlName="titre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number " placeholder="{{ '100' | currency:'EUR':true:'1.2-2'}}" formControlName="titre"></ion-input>
+      </ion-item>
+      <!-- A VALIDER DANS LE TS -->
+      <ion-item>
+         <ion-datetime displayFormat="MM/DD/YYYY" placeholder="01/01/2017" formControlName="titre"></ion-datetime>
       </ion-item>
     </ion-list>
   </form>

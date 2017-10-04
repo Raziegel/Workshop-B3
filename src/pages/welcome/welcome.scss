@@ -43,6 +43,11 @@ page-welcome {
     max-width: 80%;
     margin: auto;
   }
+  .item-inner{
+    border-bottom:1px solid #304049 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
   button.login {
     margin-top: 25px;
     background-color: white;
