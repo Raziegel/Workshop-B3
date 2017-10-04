@@ -36,15 +36,15 @@
   <ion-list>
     <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
       <ion-avatar item-start>
-        <ion-icon color="secondary" *ngIf=" item.statut == 'win'" name="ios-folder-open" item-start></ion-icon>
-        <ion-icon color="yellow" *ngIf=" item.statut == 'open'" name="ios-folder-open" item-start></ion-icon>
-        <ion-icon color="danger" *ngIf=" item.statut == 'lost'" name="ios-folder-open" item-start></ion-icon>
+        <ion-icon color="secondary" *ngIf=" item.status == 'win'" name="ios-folder-open" item-start></ion-icon>
+        <ion-icon color="yellow" *ngIf=" item.status == 'open'" name="ios-folder-open" item-start></ion-icon>
+        <ion-icon color="danger" *ngIf=" item.status == 'lost'" name="ios-folder-open" item-start></ion-icon>
       </ion-avatar>
-      <h2>{{item.titre}}</h2>
-      <p>{{item.entrepriseCliente}}</p>
+      <h2>{{item.title}}</h2>
+      <p>{{item.client}}</p>
       <ion-avatar item-end>
         <span>
-        {{item.dateDemande}}
+        {{item.date}}
         </span>
       </ion-avatar>
     </button>

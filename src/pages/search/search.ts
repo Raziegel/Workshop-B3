@@ -20,12 +20,14 @@ export class SearchPage {
    */
   getItems(ev) {
     let val = ev.target.value;
+    // console.log('coucou');
     if (!val || !val.trim()) {
       this.currentItems = [];
+
       return;
     }
     this.currentItems = this.items.query({
-      name: val
+      title: val
     });
   }
 

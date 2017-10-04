@@ -19,24 +19,22 @@ export class ItemCreatePage {
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
     this.form = formBuilder.group({
-      profilePic: [''],
-      name: ['', Validators.required],
-      about: [''],
-      titre : ['', Validators.required],
-      dateDemande : [''],
-      description : ['',Validators.required],
-      lieu : [''],
-      prix : [''],
-      duree : [''],
+      title : ['', Validators.required],
+      date : [''],
+      full_description : ['',Validators.required],
+      location : [''],
+      rate : [''],
+      duration : [''],
       frequence : [''],
-      dateDeDepartPrevuAuPlusTard : [''],
-      statut : [''],
-      entrepriseCliente : ['']
+      start_at_the_latest : [''],
+      status : [''],
+      client : ['']
     });
 
     // Watch the form for changes, and
     this.form.valueChanges.subscribe((v) => {
       this.isReadyToSave = this.form.valid;
+
     });
   }
 
