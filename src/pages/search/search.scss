@@ -9,18 +9,56 @@ page-search {
   .toolbar-title{
     color: #F57100;
   }
-  .win.active{
-    background: #FFEB3B;
+  ion-avatar{
+    text-align: center;
+  }
+  .item-start{
+    text-align: center;
+    margin: 0!important;
+
+  }
+  .item-start span{
+      font-size: 12px;
+    }
+
+    .item-start.win span{
+      color: #32db64;
+    }
+    .item-start.open span{
+      color: #F57100;
+    }
+    .item-start.lost span{
+      color: #f53d3d;
+    }
+  .win span{
+    color: #32db64 !important;
+  }
+
+  .open span{
+    color: #F57100 !important;
+  }
+  .lost span{
+    color: #f53d3d !important;
+  }
+  .open.active{
+    background: #F57100;
     ion-icon{
       color: white;
 
     }
+    span{
+      color: white !important;
+    }
   }
-  .open.active{
+
+  .win.active{
     background: #32db64;
     ion-icon{
       color: white;
 
+    }
+    span{
+      color: white !important;
     }
   }
   .lost.active{
@@ -28,6 +66,9 @@ page-search {
     ion-icon{
       color: white;
 
+    }
+    span{
+      color: white !important;
     }
   }
   .tri-attributs{

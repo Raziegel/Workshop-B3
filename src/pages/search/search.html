@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
+    <ion-title>{{ 'Search'}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,36 +9,55 @@
 
 <ion-content>
 
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'Search'  }}"></ion-searchbar>
   <ion-card class="card card-ios">
 
     <ion-card-content>
           <ion-segment>
-       <ion-segment-button class="win active">
-         <ion-icon color="yellow" name="ios-folder-open" item-start ></ion-icon>
+       <ion-segment-button class="open active">
+         <span>
+         <ion-icon color="gfi_orange" name="ios-folder-open" item-start class="open"></ion-icon>
+         <span>OPEN</span>
+       </span>
        </ion-segment-button>
 
-       <ion-segment-button class='open '>
-         <ion-icon color="secondary" name="ios-folder-open" item-start class="open"></ion-icon>
+       <ion-segment-button class='win '>
+         <span>
+         <ion-icon color="secondary" name="ios-folder-open" item-start class="win"></ion-icon>
+         <span>WIN</span>
+       </span>
        </ion-segment-button>
 
        <ion-segment-button class='lost ' >
-         <ion-icon color="danger" name="ios-folder-open" item-start class="lost"></ion-icon>
+         <span>
+           <ion-icon color="danger" name="ios-folder-open" item-start class="lost"></ion-icon>
+         <span>LOST</span>
+       </span>
        </ion-segment-button>
      </ion-segment>
      <ion-segment  color='primary' class="tri-attributs">
   <ion-segment-button >Title</ion-segment-button>
   <ion-segment-button class="active" ><span>Date</span><ion-icon color="white" name="md-arrow-dropdown"  ></ion-icon></ion-segment-button>
-  <ion-segment-button>Company</ion-segment-button>
+  <ion-segment-button>Client</ion-segment-button>
 </ion-segment>
     </ion-card-content>
   </ion-card>
   <ion-list>
     <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
       <ion-avatar item-start>
-        <ion-icon color="secondary" *ngIf=" item.status == 'win'" name="ios-folder-open" item-start></ion-icon>
-        <ion-icon color="yellow" *ngIf=" item.status == 'open'" name="ios-folder-open" item-start></ion-icon>
-        <ion-icon color="danger" *ngIf=" item.status == 'lost'" name="ios-folder-open" item-start></ion-icon>
+        <span class='item-start win' *ngIf=" item.status == 'win'" item-start fixed>
+          <ion-icon  color="secondary" name="ios-folder-open" ></ion-icon><br>
+          <span>WIN</span>
+        </span>
+
+        <span class='item-start open' *ngIf=" item.status == 'open'" item-start fixed>
+          <ion-icon  color="gfi_orange" name="ios-folder-open" ></ion-icon><br>
+          <span>OPEN</span>
+        </span>
+        <span class='item-start lost' *ngIf=" item.status == 'lost'" item-start fixed>
+          <ion-icon  color="danger" name="ios-folder-open" ></ion-icon><br>
+          <span>LOST</span>
+        </span>
       </ion-avatar>
       <h2>{{item.title}}</h2>
       <p>{{item.client}}</p>
