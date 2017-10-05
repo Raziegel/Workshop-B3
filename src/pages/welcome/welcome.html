@@ -9,7 +9,7 @@
     <ion-header>
 
       <ion-navbar>
-        <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+        <ion-title>{{ 'CONNECTION' }}</ion-title>
       </ion-navbar>
 
     </ion-header>
@@ -20,7 +20,7 @@
         <ion-list>
 
           <ion-item >
-            <ion-label fixed color='gfi_bleu_nuit'>{{ 'EMAIL' | translate }}</ion-label>
+            <ion-label fixed color='gfi_bleu_nuit'>{{ "E-mail" }}</ion-label>
             <ion-input type="email" [(ngModel)]="account.email" name="email" color='gfi_gris'></ion-input>
           </ion-item>
 
@@ -34,7 +34,7 @@
           -->
 
           <ion-item>
-            <ion-label fixed color='gfi_bleu_nuit'>{{ 'PASSWORD' | translate }}</ion-label>
+            <ion-label fixed color='gfi_bleu_nuit'>{{ 'Password' }}</ion-label>
             <ion-input type="password" [(ngModel)]="account.password" name="password" color='gfi_gris'></ion-input>
           </ion-item>
 

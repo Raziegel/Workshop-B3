@@ -9,4 +9,21 @@ page-list-master {
   .toolbar-title{
     color: #F57100;
   }
+  .item-start{
+    text-align: center;
+
+  }
+  .item-start span{
+      font-size: 12px;
+    }
+
+    .item-start.win span{
+      color: #32db64;
+    }
+    .item-start.open span{
+      color: #F57100;
+    }
+    .item-start.lost span{
+      color: #f53d3d;
+    }
 }
