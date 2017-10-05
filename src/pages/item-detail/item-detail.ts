@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { Items } from '../../providers/providers';
+import { Item } from '../../models/item';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,7 @@ export class ItemDetailPage {
   item: any;
   form: FormGroup;
 
-  constructor(public navCtrl: NavController,public viewCtrl: ViewController, navParams: NavParams,public camera: Camera, formBuilder: FormBuilder, items: Items) {
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController, navParams: NavParams,public camera: Camera, formBuilder: FormBuilder,public items: Items) {
     this.item = navParams.get('item') || items.defaultItem;
     this.form = formBuilder.group({
       title : ['', Validators.required],
@@ -89,8 +90,15 @@ export class ItemDetailPage {
    * The user is done and wants to create the item, so return it
    * back to the presenter.
    */
-  done() {
+  done( item: Item) {
     if (!this.form.valid) { return; }
+    else{
+      console.log(this.form.value["title"]);
+      this.items.update(this.item, this.form.value["title"], this.form.value["full_description"], this.form.value["location"], this.form.value["client"],this.form.value["contact_name"], this.form.value["key_success_1"] , this.form.value["key_success_2"] , this.form.value["key_success_3"] , this.form.value["rate"], this.form.value["duration"], this.form.value["frequency"]   );
+
     this.viewCtrl.dismiss(this.form.value);
+
+  }
+
   }
   }
