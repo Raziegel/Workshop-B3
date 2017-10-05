@@ -84,12 +84,12 @@
       <ion-item>
       <ion-label color="gfi_orange" stacked>Status</ion-label>
       <ion-select formControlName="status">
-        <ion-option value="open" selected>Open</ion-option>
-        <ion-option value="lost">Lost</ion-option>
-        <ion-option value="win">Win</ion-option>
+        <ion-option value="open"  color="yellow" selected>
+          <ion-icon color="yellow"  name="ios-folder-open" item-start></ion-icon>Open</ion-option>
+        <ion-option value="lost"><ion-icon color="danger"  name="ios-folder-open" item-start></ion-icon>Lost</ion-option>
+        <ion-option value="win"><ion-icon color="secondary"  name="ios-folder-open" item-start></ion-icon>Win</ion-option>
       </ion-select>
     </ion-item>
-
 
 
     </ion-list>
