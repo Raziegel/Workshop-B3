@@ -127,7 +127,22 @@ export class Items {
   add(item: Item) {
     this.items.push(item);
   }
+update(item: Item, title, description,location,companyName,contactName, ksfactor1, ksfactor2, ksfactor3, rate, duration, frequency ){
+  
+  item["title"] = title;
+  item["full_description"] = description;
+  item["location"] = location;
+  item["client"] = companyName;
+  item["contact_name"] = contactName;
+  item["key_success_1"] = ksfactor1;
+  item["key_success_2"] = ksfactor2;
+  item["key_success_3"] = ksfactor3;
+  item["rate"] = rate;
+  item["duration"] = duration;
+  item["frequency"] = frequency;
 
+
+}
   delete(item: Item) {
     this.items.splice(this.items.indexOf(item), 1);
   }
