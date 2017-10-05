@@ -9,12 +9,12 @@
 
 <ion-content>
 
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'Search'  }}"></ion-searchbar>
+  <ion-searchbar (ionInput)="getItems($event)" ng-model='searchbar' placeholder="{{ 'Search'  }}"></ion-searchbar>
   <ion-card class="card card-ios">
 
     <ion-card-content>
           <ion-segment>
-       <ion-segment-button class="open active">
+       <ion-segment-button (click)="opensearch($event)" class="open active">
          <span>
          <ion-icon color="gfi_orange" name="ios-folder-open" item-start class="open"></ion-icon>
          <span>OPEN</span>
@@ -43,7 +43,8 @@
     </ion-card-content>
   </ion-card>
   <ion-list>
-    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+      <ion-item-sliding *ngFor="let item of currentItems">
+    <button ion-item (click)="openItem(item)" >
       <ion-avatar item-start>
         <span class='item-start win' *ngIf=" item.status == 'win'" item-start fixed>
           <ion-icon  color="secondary" name="ios-folder-open" ></ion-icon><br>
@@ -67,5 +68,11 @@
         </span>
       </ion-avatar>
     </button>
+    <ion-item-options>
+      <button ion-button color="danger" (click)="deleteItem(item)">
+        {{ 'DELETE_BUTTON' | translate }}
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
   </ion-list>
 </ion-content>

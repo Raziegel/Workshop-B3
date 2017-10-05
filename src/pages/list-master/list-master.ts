@@ -60,7 +60,7 @@ export class ListMasterPage {
       ]
     });
     confirm.present();
-
+  
 }
 
 
