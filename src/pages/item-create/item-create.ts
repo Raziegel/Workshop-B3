@@ -33,6 +33,12 @@ export class ItemCreatePage {
       key_success_1 : [''],
       key_success_2 : [''],
       key_success_3 : [''],
+      col1 : [''],
+      col2 : [''],
+      col3 : [''],
+      col4 : [''],
+      col5 : [''],
+      doc : [''],
 
     });
 

@@ -1,4 +1,27 @@
 page-item-detail {
+  ion-navbar{
+    background: #263145 !important;
+    color: blue !important;
+  }
+  .toolbar-background{
+    background:  #263145 !important;
+  }
+  .toolbar-title{
+    color: #F57100;
+  }
+  .starselect{
+    color: #304049;
+  }
+  .starselection{
+    font-size: 12px;
+    color: #304049;
+  }
+  .item-input-has-focus .label-md{
+    color: #263145 !important;
+  }
+    .item-input-has-focus .item-inner{
+      border-bottom-color: #263145 !important;
+    }
   .item-profile {
     width: 100%;
     background-position: center center;

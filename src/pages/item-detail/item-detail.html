@@ -45,67 +45,127 @@
   <form *ngIf="form" [formGroup]="form" (ngSubmit)="updateItem()">
 
     <ion-list>
-
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Title</ion-label>
+        <ion-label color="gfi_orange" stacked>Creation date<span class="starselect">*</span></ion-label>
+         <ion-datetime id='getdate' min="2017-10-06" max="2025-12-31" displayFormat="DD/MM/YYYY"  formControlName="date" placeholder="{{item.date}}"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label color="gfi_orange" stacked>Title<span class="starselect">*</span></ion-label>
         <ion-input type="text" placeholder="{{ 'Need&rsquo;s title '}}" formControlName="title" value="{{item.title}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Description</ion-label>
+        <ion-label color="gfi_orange" stacked>Description<span class="starselect">*</span></ion-label>
         <ion-textarea  placeholder="{{ 'Need&rsquo;s description'}}" formControlName="full_description" value="{{item.full_description}}"></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Location</ion-label>
+        <ion-label color="gfi_orange" stacked>Location<span class="starselect">*</span></ion-label>
         <ion-input type="text" placeholder="{{ 'Need&rsquo;s location'}}" formControlName="location" value="{{item.location}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Company name</ion-label>
+        <ion-label color="gfi_orange" stacked>Company name<span class="starselect">*</span></ion-label>
         <ion-input type="text" placeholder="{{ 'Client&rsquo;s company name'}}" formControlName="client" value="{{item.client}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Contact name</ion-label>
+        <ion-label color="gfi_orange" stacked>Contact name<span class="starselect">*</span></ion-label>
         <ion-input type="text" placeholder="{{ 'Client&rsquo;s contact name'}}" formControlName="contact_name" value="{{item.contact_name}}"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="gfi_orange" stacked>Key success factor 1</ion-label>
-        <ion-input type="text" placeholder="{{ 'Key success factor 1'}}" formControlName="key_success_1" value="{{item.key_success_1}}"></ion-input>
+        <ion-input type="text" placeholder="Key success factor 1" formControlName="key_success_1" value={{item.key_success_1}}></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="gfi_orange" stacked>Key success factor 2</ion-label>
-        <ion-input type="text" placeholder="{{ 'Key success factor 2'}}" formControlName="key_success_2" value="{{item.key_success_2}}"></ion-input>
+        <ion-input type="text" placeholder="Key success factor 2" formControlName="key_success_2" value={{item.key_success_2}}></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="gfi_orange" stacked>Key success factor 3</ion-label>
-        <ion-input type="text" placeholder="{{ 'Key success factor 3'}}" formControlName="key_success_3" value="{{item.key_success_3}}"></ion-input>
+        <ion-input type="text" placeholder="Need's Key success factor 3" formControlName="key_success_3" value={{item.key_success_3}}></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Rate</ion-label>
-        <ion-input  type="number" placeholder="{{ 100 }}" formControlName="rate" value="{{item.rate}}"></ion-input>
+        <ion-label color="gfi_orange" stacked>Rate<span class="starselect">*</span></ion-label>
+        <ion-input  type="number" placeholder="{{ 100 }}" formControlName="rate" value="{{item.rate}}" ></ion-input>
          <ion-icon color="gfi_orange" class="price" name="logo-euro" item-right></ion-icon>
       </ion-item>
       <ion-segment>
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Duration (months)</ion-label>
-        <ion-input type="number " placeholder="{{ 3 }}" formControlName="duration" value="{{item.duration}}"></ion-input>
+        <ion-label color="gfi_orange" stacked>Duration (months)<span class="starselect">*</span></ion-label>
+        <ion-input type="number" placeholder="{{ 3 }}" formControlName="duration" value="{{item.duration}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color="gfi_orange" stacked>Frequency (days/week)</ion-label>
-        <ion-input type="number " placeholder="{{ 3 }}" formControlName="frequence" value="{{item.frequence}}"></ion-input>
+        <ion-label color="gfi_orange" stacked>Frequency (days/week)<span class="starselect">*</span></ion-label>
+        <ion-input type="number" placeholder="{{ 3 }}" formControlName="frequence" value="{{item.frequence}}"></ion-input>
       </ion-item>
     </ion-segment>
-      <!-- <ion-item>
-        <ion-label color="gfi_orange" stacked>Start at the latest</ion-label>
-         <ion-datetime displayFormat="MM/DD/YYYY" placeholder="01/01/2017" formControlName="start_at_the_latest" value="{{item.date}}"></ion-datetime>
-      </ion-item> -->
-      <!-- <ion-item>
-      <ion-label color="gfi_orange"  stacked>Status</ion-label>
-      <ion-select formControlName="status" value="{{item.status}}">
-        <ion-option value="open" selected>Open</ion-option>
-        <ion-option value="lost">Lost</ion-option>
-        <ion-option value="win">Win</ion-option>
+      <ion-item>
+        <ion-label color="gfi_orange" stacked>Start at the latest<span class="starselect">*</span></ion-label>
+         <ion-datetime id='getdate' min="2017-10-06" max="2025-12-31" displayFormat="DD/MM/YYYY" formControlName="start_at_the_latest" placeholder="{{item.start_at_the_latest}}"></ion-datetime>
+      </ion-item>
+      <ion-item>
+      <ion-label color="gfi_orange" stacked>Status<span class="starselect">*</span></ion-label>
+      <ion-select formControlName="status" placeholder="{{item.status}}" >
+        <ion-option value="open" class='option-yellow'  color="yellow" >Open</ion-option>
+        <ion-option class='option-red' value="lost">Lost</ion-option>
+        <ion-option value="win" class='option-green'>Win</ion-option>
       </ion-select>
-    </ion-item> -->
+    </ion-item>
+    <ion-item>
+    <ion-label color="gfi_orange" stacked>Collaborator 1</ion-label>
+    <ion-select formControlName="col1" placeholder="{{item.col1}}">
+      <ion-option value="F.Reinold (C#)"  >F.Reinold (C#)</ion-option>
+      <ion-option value="A.Ferronniere (Web)">M.Braux (JAVA)</ion-option>
+      <ion-option value="A.Ferronniere (Web)">A.Ferronniere (Web)</ion-option>
+      <ion-option value="L.Yagami (C++)">L.Yagami (C++)</ion-option>
+      <ion-option  value="L.Torval (C)">L.Torval (C)</ion-option>
+      <ion-option  value="I.Aberkane (Web)">I.Aberkane (Web)</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-label color="gfi_orange" stacked>Collaborator 2</ion-label>
+  <ion-select formControlName="col2" placeholder="{{item.col2}}" >
+  <ion-option value="F.Reinold (C#)"  >F.Reinold (C#)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">M.Braux (JAVA)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">A.Ferronniere (Web)</ion-option>
+    <ion-option value="L.Yagami (C++)">L.Yagami (C++)</ion-option>
+    <ion-option  value="L.Torval (C)">L.Torval (C)</ion-option>
+    <ion-option  value="I.Aberkane (Web)">I.Aberkane (Web)</ion-option>
+  </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-label color="gfi_orange" stacked>Collaborator 3</ion-label>
+  <ion-select formControlName="col3" placeholder="{{item.col3}}" >
+    <ion-option value="F.Reinold (C#)"  >F.Reinold (C#)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">M.Braux (JAVA)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">A.Ferronniere (Web)</ion-option>
+    <ion-option value="L.Yagami (C++)">L.Yagami (C++)</ion-option>
+    <ion-option  value="L.Torval (C)">L.Torval (C)</ion-option>
+    <ion-option  value="I.Aberkane (Web)">I.Aberkane (Web)</ion-option>
+  </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-label color="gfi_orange" stacked>Collaborator 4</ion-label>
+  <ion-select formControlName="col4" placeholder="{{item.col4}}" >
+    <ion-option value="F.Reinold (C#)"  >F.Reinold (C#)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">M.Braux (JAVA)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">A.Ferronniere (Web)</ion-option>
+    <ion-option value="L.Yagami (C++)">L.Yagami (C++)</ion-option>
+    <ion-option  value="L.Torval (C)">L.Torval (C)</ion-option>
+    <ion-option  value="I.Aberkane (Web)">I.Aberkane (Web)</ion-option>
+  </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-label color="gfi_orange" stacked>Collaborator 5</ion-label>
+  <ion-select formControlName="col5" placeholder="{{item.col4}}" >
+    <ion-option value="F.Reinold (C#)"  >F.Reinold (C#)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">M.Braux (JAVA)</ion-option>
+    <ion-option value="A.Ferronniere (Web)">A.Ferronniere (Web)</ion-option>
+    <ion-option value="L.Yagami (C++)">L.Yagami (C++)</ion-option>
+    <ion-option  value="L.Torval (C)">L.Torval (C)</ion-option>
+    <ion-option  value="I.Aberkane (Web)">I.Aberkane (Web)</ion-option>
+  </ion-select>
+  </ion-item>
+
+
 
 
 
