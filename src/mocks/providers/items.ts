@@ -16,7 +16,7 @@ export class Items {
   constructor() {
     let items = [
       {
-        "date" : "01/01/17",
+        "date" : "01/01/2017",
         "client" :"La tête dans la toile",
         "contact_name" : "FERRONNIERE Alan",
         "title" : "DeploiementBDDOracle",
@@ -43,7 +43,7 @@ export class Items {
 
       },
       {
-        "date" : "01/01/17",
+        "date" : "01/01/2017",
         "client" :"Atool développement",
         "contact_name" : "IMOUCHE Guillaume",
         "title" : "DeploiementInfra",
@@ -66,7 +66,7 @@ export class Items {
 
       },
       {
-        "date" : "05/06/17",
+        "date" : "05/06/2017",
         "client" :"PunCil Case",
         "contact_name" : "JOKEMAN Henry",
         "title" : "DeploiementSiteWeb",
@@ -88,7 +88,7 @@ export class Items {
 
       },
       {
-        "date" : "25/09/17",
+        "date" : "25/09/2017",
         "client" :"EPSI Nantes",
         "contact_name" : "REINOLD Frédéric",
         "title" : "IntiltuléWorkshopEtudiant",
@@ -111,7 +111,7 @@ export class Items {
 
       },
       {
-        "date" : "04/10/17",
+        "date" : "04/10/2017",
         "client" :"SNCF",
         "contact_name" : "TOUPARAIL MArion",
         "title" : "ConfigurationPosteClient",
