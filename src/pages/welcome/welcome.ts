@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController,ToastController } from 'ionic-angular';
+import { IonicPage, NavController,ToastController,AlertController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
@@ -20,7 +20,7 @@ export class WelcomePage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { email: string, password: string } = {
-    email: 'test@example.com',
+    email: 'test@gfi.fr',
     password: 'test'
   };
 
@@ -30,15 +30,18 @@ export class WelcomePage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,public alertCtrl: AlertController) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
-      this.loginErrorString = value;
+      // this.loginErrorString = value;
     })
   }
 
   // Attempt to login in through our User service
   doLogin() {
+  var s = this.account.email.toString().search("@gfi.fr");
+  if(s !== -1 ){
+  
     this.user.login(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
     }, (err) => {
@@ -51,7 +54,27 @@ export class WelcomePage {
       });
       toast.present();
     });
+  }else{
+
+    let confirm = this.alertCtrl.create({
+      title: 'Identifiants invalides.',
+      message: '',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+
+          }
+        }
+
+      ]
+    });
+    confirm.present();
+
   }
+
+  }
+
 
 
   login() {

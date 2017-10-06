@@ -34,6 +34,13 @@ export class Items {
         "consultants_name_3": "PRUD'HOMME Thibaut",
         "consultants_name_4": "MAZZA Yoann",
         "status" : "win",
+        "col1" : "F.Reinold (C#)",
+        "col2" : "L.Torval (C)",
+        "col3" : "A.Ferronniere (Web)",
+        "col4" : "",
+        "col5" : "",
+        "doc" : "",
+
       },
       {
         "date" : "01/01/17",
@@ -49,6 +56,14 @@ export class Items {
         "rate" : "2400€",
         "consultants_name_1": "GUILLON Benjamin",
         "status" : "win",
+        "col1" : "A.Ferronniere (Web)",
+        "col2" : "I.Aberkane (Web)",
+        "col3" : "",
+        "col4" : "",
+        "col5" : "",
+        "doc" : "",
+
+
       },
       {
         "date" : "05/06/17",
@@ -64,6 +79,13 @@ export class Items {
         "rate" : "2400€",
         "consultants_name_1": "PRUD'HOMME Thibaut",
         "status" : "lost",
+        "col1" : "M.Braux (JAVA)",
+        "col2" : "A.Ferronniere (Web)",
+        "col3" : "L.Yagami (C++)",
+        "col4" : "",
+        "col5" : "",
+        "doc" : "",
+
       },
       {
         "date" : "25/09/17",
@@ -80,6 +102,13 @@ export class Items {
         "rate" : "9000€",
         "consultants_name_1": "EVERS Steeve",
         "status" : "open",
+        "col1" : "",
+        "col2" : "",
+        "col3" : "",
+        "col4" : "",
+        "col5" : "",
+        "doc" : "",
+
       },
       {
         "date" : "04/10/17",
@@ -97,6 +126,12 @@ export class Items {
         "consultants_name_1": "MAZZA Yoann",
         "consultants_name_2": "MORELLE Olivier",
         "status" : "open",
+        "col1" : "I.Aberkane (Web)",
+        "col2" : "",
+        "col3" : "",
+        "col4" : "",
+        "col5" : "",
+        "doc" : "",
       }
     ];
 
@@ -125,10 +160,13 @@ export class Items {
   }
 
   add(item: Item) {
+    var d = new Date().toLocaleDateString();
+    item['date'] = d;
     this.items.push(item);
   }
-update(item: Item, title, description,location,companyName,contactName, ksfactor1, ksfactor2, ksfactor3, rate, duration, frequency ){
-  
+update(item: Item, date, title, description,location,companyName,contactName, ksfactor1, ksfactor2, ksfactor3, rate, duration, frequency, col1, col2, col3, col4, col5,doc ){
+
+  item["date"] = date;
   item["title"] = title;
   item["full_description"] = description;
   item["location"] = location;
@@ -140,6 +178,13 @@ update(item: Item, title, description,location,companyName,contactName, ksfactor
   item["rate"] = rate;
   item["duration"] = duration;
   item["frequency"] = frequency;
+  item["col1"] = col1;
+  item["col2"] = col2;
+  item["col3"] = col3;
+  item["col4"] = col4;
+  item["col5"] = col5;
+  item["doc"] = doc;
+
 
 
 }

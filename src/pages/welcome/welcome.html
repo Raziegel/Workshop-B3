@@ -8,7 +8,7 @@
   <div padding>
     <ion-header>
 
-      <ion-navbar>
+      <ion-navbar  hideBackButton="true">
         <ion-title>{{ 'CONNECTION' }}</ion-title>
       </ion-navbar>
 
@@ -21,7 +21,7 @@
 
           <ion-item >
             <ion-label fixed color='gfi_bleu_nuit'>{{ "E-mail" }}</ion-label>
-            <ion-input type="email" [(ngModel)]="account.email" name="email" color='gfi_gris'></ion-input>
+            <ion-input type="email" [(ngModel)]="account.email" name="email" color='gfi_gris' pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gfi)\.fr$" ></ion-input>
           </ion-item>
 
           <!--
