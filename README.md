@@ -106,7 +106,7 @@ On retrouve ici les informations relative à une fiche besoin déjà créée. To
 
 <a name="ann_cre"></a> <img src="src/assets/img/doctech/capturecreate.png" width="295" /><a name="ann_sea"></a> <img src="src/assets/img/doctech/capturesearch.png" width="300" />
 
-<a name="ann_upd"></a> <img src="src/assets/img/doctech/captureupdate.png" width="295" />
+<a name="ann_upd"></a> <img src="src/assets/img/doctech/captureupdate 01.png" width="295" /> <img src="src/assets/img/doctech/captureupdate 02.png" width="293" />
 
 ## <a name="credits"></a> Crédits
 
