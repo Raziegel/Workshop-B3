@@ -20,8 +20,8 @@ export class WelcomePage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { email: string, password: string } = {
-    email: 'test@gfi.fr',
-    password: 'test'
+    email: '',
+    password: ''
   };
 
   // Our translated text strings
@@ -40,8 +40,9 @@ export class WelcomePage {
   // Attempt to login in through our User service
   doLogin() {
   var s = this.account.email.toString().search("@gfi.fr");
-  if(s !== -1 ){
-  
+  var sp = this.account.password.toString().search("123gfi");
+  if(s !== -1 && sp !== -1 ){
+
     this.user.login(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
     }, (err) => {
